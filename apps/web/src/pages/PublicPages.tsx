@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
 import { AdSlot } from '../components/AdSlot';
 import { Seo } from '../components/Seo';
+import { PaperPilotBrand } from '../components/PaperPilotBrand';
 import { categorySlug, publishedCategories, publishedTools } from '../data/tools';
 
 const pageCopy = {
@@ -76,9 +77,8 @@ export function PublicLayout() {
     <div className="min-h-screen text-slate-800">
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-          <Link to="/" className="flex items-center gap-3 font-extrabold tracking-tight text-slate-900">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-600 text-lg text-white shadow-soft">P</span>
-            PaperPilot
+          <Link to="/" aria-label="PaperPilot home">
+            <PaperPilotBrand />
           </Link>
           <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-slate-600">
             {navItems.map(({ to, label }) => (

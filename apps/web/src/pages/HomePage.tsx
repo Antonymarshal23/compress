@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { publishedTools } from '../data/tools';
 import { Seo } from '../components/Seo';
 import { AdSlot } from '../components/AdSlot';
+import { PaperPilotBrand } from '../components/PaperPilotBrand';
 import { useNavigate } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import { useState } from 'react';
@@ -51,20 +52,8 @@ export default function HomePage() {
       />
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <Link to="/" aria-label="PaperPilot home" className="flex items-center gap-3">
-            <img src="/favicon.svg" alt="" className="h-10 w-10" />
-            <div className="text-lg font-extrabold tracking-tight">
-              <span className="text-blue-600">P</span>
-              <span className="text-red-500">a</span>
-              <span className="text-yellow-500">p</span>
-              <span className="text-blue-600">e</span>
-              <span className="text-green-600">r</span>
-              <span className="text-red-500">P</span>
-              <span className="text-blue-600">i</span>
-              <span className="text-yellow-500">l</span>
-              <span className="text-green-600">o</span>
-              <span className="text-red-500">t</span>
-            </div>
+          <Link to="/" aria-label="PaperPilot home">
+            <PaperPilotBrand />
           </Link>
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">

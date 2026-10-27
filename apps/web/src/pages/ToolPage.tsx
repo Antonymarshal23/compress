@@ -5,6 +5,7 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { tools } from '../data/tools';
 import { Seo } from '../components/Seo';
 import { AdSlot } from '../components/AdSlot';
+import { PaperPilotBrand } from '../components/PaperPilotBrand';
 
 export default function ToolPage() {
   const { slug } = useParams();
@@ -173,9 +174,9 @@ export default function ToolPage() {
     <div className="min-h-screen bg-slate-50 text-slate-800">
       <header className="border-b border-slate-200 bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <Link to="/" className="inline-flex items-center gap-3 text-slate-900">
+          <Link to="/" aria-label="PaperPilot home" className="inline-flex items-center gap-3 text-slate-900">
             <ArrowLeft size={18} />
-            <span className="text-lg font-bold">PaperPilot</span>
+            <PaperPilotBrand />
           </Link>
         </div>
       </header>
