@@ -51,10 +51,19 @@ export default function HomePage() {
       />
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-600 text-lg font-bold text-white shadow-soft">P</div>
-            <div>
-              <div className="text-lg font-extrabold tracking-tight text-slate-900">PaperPilot</div>
+          <Link to="/" aria-label="PaperPilot home" className="flex items-center gap-3">
+            <img src="/favicon.svg" alt="" className="h-10 w-10" />
+            <div className="text-lg font-extrabold tracking-tight">
+              <span className="text-blue-600">P</span>
+              <span className="text-red-500">a</span>
+              <span className="text-yellow-500">p</span>
+              <span className="text-blue-600">e</span>
+              <span className="text-green-600">r</span>
+              <span className="text-red-500">P</span>
+              <span className="text-blue-600">i</span>
+              <span className="text-yellow-500">l</span>
+              <span className="text-green-600">o</span>
+              <span className="text-red-500">t</span>
             </div>
           </Link>
 
