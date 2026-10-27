@@ -1,0 +1,331 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.15), transparent 35%),
+    linear-gradient(180deg, #f8fafc 0%, #eef6ff 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.card {
+  @apply rounded-2xl border border-slate-200 bg-white/90 shadow-soft backdrop-blur-sm;
+}
+
+.tool-grid {
+  @apply grid gap-6 md:grid-cols-2 xl:grid-cols-3;
+}
+
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  border-radius: 2rem;
+}
+
+.festival-diwali {
+  background:
+    radial-gradient(ellipse at 14% 20%, rgba(251, 191, 36, 0.27), transparent 36%),
+    radial-gradient(ellipse at 88% 78%, rgba(249, 115, 22, 0.16), transparent 38%);
+}
+
+.festival-christmas {
+  background:
+    radial-gradient(ellipse at 12% 18%, rgba(34, 197, 94, 0.13), transparent 34%),
+    radial-gradient(ellipse at 90% 78%, rgba(239, 68, 68, 0.12), transparent 38%);
+}
+
+.festival-new-year {
+  background:
+    radial-gradient(ellipse at 12% 18%, rgba(250, 204, 21, 0.16), transparent 34%),
+    radial-gradient(ellipse at 90% 78%, rgba(99, 102, 241, 0.14), transparent 38%);
+}
+
+.festival-greeting {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0 auto 1.5rem;
+  border: 1px solid rgba(217, 119, 6, 0.18);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.55rem 1.1rem;
+  color: #92400e;
+  font-size: 0.875rem;
+  font-weight: 650;
+  box-shadow: 0 6px 20px rgba(120, 53, 15, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.festival-christmas .festival-greeting {
+  border-color: rgba(22, 101, 52, 0.18);
+  color: #166534;
+}
+
+.festival-decoration {
+  position: absolute;
+  z-index: 0;
+  inset: 1rem 0 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.festival-ornament {
+  position: absolute;
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.58);
+  color: #b45309;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  animation: festival-drift 4s ease-in-out infinite;
+}
+
+.festival-christmas .festival-ornament {
+  color: #166534;
+}
+
+.festival-diwali .festival-ornament {
+  border-color: rgba(251, 191, 36, 0.35);
+  background: rgba(255, 251, 235, 0.86);
+  box-shadow: 0 10px 28px rgba(180, 83, 9, 0.12);
+}
+
+.ornament-1 {
+  top: 2%;
+  right: 12%;
+}
+
+.ornament-2 {
+  top: 38%;
+  right: 1%;
+  animation-delay: -1s;
+}
+
+.ornament-3 {
+  right: 6%;
+  bottom: 5%;
+  animation-delay: -2s;
+}
+
+.ornament-4 {
+  bottom: 7%;
+  left: 2%;
+  animation-delay: -3s;
+}
+
+.festival-greeting + .grid {
+  position: relative;
+  z-index: 1;
+}
+
+.file-row {
+  animation: file-arrive 300ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.file-row:hover {
+  transform: translateY(-1px);
+  border-color: #bfdbfe;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+}
+
+.file-icon {
+  transition: transform 220ms ease, background-color 220ms ease;
+}
+
+.file-row:hover .file-icon {
+  transform: rotate(-6deg) scale(1.08);
+  background-color: #dbeafe;
+}
+
+.file-order-button,
+.file-remove-button {
+  border-radius: 9999px;
+  padding: 0.35rem 0.6rem;
+  transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.file-order-button:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.08);
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.file-order-button:active:not(:disabled),
+.file-remove-button:active {
+  transform: scale(0.94);
+}
+
+.file-remove-button:hover .remove-sparkle {
+  animation: sparkle-twinkle 700ms ease-in-out infinite;
+}
+
+.remove-sparkle {
+  opacity: 0.55;
+  transition: opacity 160ms ease;
+}
+
+.file-remove-button:hover .remove-sparkle {
+  opacity: 1;
+}
+
+.action-sparkle {
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.action-sparkle::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.24) 48%, transparent 76%);
+  content: '';
+  opacity: 0;
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.action-sparkle:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.24);
+}
+
+.action-sparkle:hover:not(:disabled)::after {
+  opacity: 1;
+  transform: translateX(120%);
+  transition: transform 650ms ease, opacity 180ms ease;
+}
+
+.action-sparkle:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+.success-glow {
+  animation: success-pop 420ms ease-out both;
+}
+
+.success-sparkle {
+  animation: sparkle-twinkle 1.8s ease-in-out infinite;
+}
+
+.sparkle-download {
+  background: linear-gradient(110deg, #059669, #0d9488 55%, #2563eb);
+  box-shadow: 0 8px 20px rgba(13, 148, 136, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.sparkle-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(13, 148, 136, 0.28);
+}
+
+.sparkle-icon {
+  animation: sparkle-twinkle 1.8s ease-in-out infinite;
+}
+
+@keyframes success-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes file-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(5px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes festival-drift {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(3deg);
+  }
+}
+
+@keyframes sparkle-twinkle {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(0.9) rotate(-8deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12) rotate(8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .success-glow,
+  .success-sparkle,
+  .file-row,
+  .file-icon,
+  .file-order-button,
+  .file-remove-button,
+  .remove-sparkle,
+  .festival-ornament,
+  .action-sparkle,
+  .sparkle-download,
+  .sparkle-icon {
+    animation: none;
+    transition: none;
+  }
+
+  .action-sparkle::after {
+    display: none;
+  }
+}
